@@ -139,8 +139,6 @@ class PVC{
 
 	public function admin_assets(){
 		wp_enqueue_script('jquery');
-		wp_enqueue_style($this->__('bootstrap_css'), $this->url('bootstrap-3.3.5/css/bootstrap.min.css'), false);
-		wp_enqueue_script($this->__('bootstrap_js'), $this->url('bootstrap-3.3.5/css/bootstrap.min.js'), false);
 	}
 
 	// Prefixes all the option names
