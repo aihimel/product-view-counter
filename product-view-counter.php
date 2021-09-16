@@ -2,12 +2,25 @@
 /**
  * Plugin Name: Product View Counter
  * Plugin URI: https://www.wordpress.org/plugins/product-view-counter
- * Author Name: Aftabul Islam
- * Version: 1.0.0
+ * Description: A simple plugin to keep track of your product view. Has simplified configuration options and view options.
+ * Author: Aftabul Islam
+ * Author URI: https://profiles.wordpress.org/aihimel/
+ * Version: 1.1.0
  * Author Email: toaihimel@gmail.com
- * License: GPLv3
- * Description: The plugin keeps track your product pageviews of today, yesterday, last week and total views.
- * Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
+ * License: GPLv3 or later
+ *
+ * Copyright 2015-2021  Aftabul Islam
+ *
+ * PHP Requirements
+ * Requires PHP: 5.6
+ *
+ * WordPress Supports
+ * Requires at least: 4.2
+ * Tested up to: 5.8
+ *
+ * WooCommerce Support
+ * WC requires at least: 3.5
+ * WC tested up to: 5.6
  *
  */
 
@@ -41,8 +54,10 @@ class PVC{
 		global $product, $wpdb;
 		$table = $this->table;
 
+        $product_id = $product->get_id();
+
 		// Record insertion query
-		$sql = "INSERT INTO $table(product_id) VALUES($product->id);";
+		$sql = "INSERT INTO $table(product_id) VALUES( $product_id );";
 		if(get_option($this->__('count-admin')) == 'on'){
 			$wpdb->get_results($sql, OBJECT);
 		} else if(get_option($this->__('count-admin')) == 'off'){
@@ -102,9 +117,12 @@ class PVC{
 		  _time timestamp DEFAULT NOW() NOT NULL,
 		  UNIQUE KEY id (id)
 		  ) $charset_collate;";
+
 		require_once(ABSPATH.'wp-admin/includes/upgrade.php');
-		dbDelta($sql);
-	}
+
+        maybe_create_table($this->table, $sql);
+
+    }
 
 	// Saving Admin Form Data
 	public function save_admin_form_data(){
@@ -139,8 +157,6 @@ class PVC{
 
 	public function admin_assets(){
 		wp_enqueue_script('jquery');
-		wp_enqueue_style($this->__('bootstrap_css'), $this->url('bootstrap-3.3.5/css/bootstrap.min.css'), false);
-		wp_enqueue_script($this->__('bootstrap_js'), $this->url('bootstrap-3.3.5/css/bootstrap.min.js'), false);
 	}
 
 	// Prefixes all the option names
