@@ -41,8 +41,10 @@ class PVC{
 		global $product, $wpdb;
 		$table = $this->table;
 
+        $product_id = $product->get_id();
+
 		// Record insertion query
-		$sql = "INSERT INTO $table(product_id) VALUES($product->id);";
+		$sql = "INSERT INTO $table(product_id) VALUES( $product_id );";
 		if(get_option($this->__('count-admin')) == 'on'){
 			$wpdb->get_results($sql, OBJECT);
 		} else if(get_option($this->__('count-admin')) == 'off'){
@@ -102,9 +104,12 @@ class PVC{
 		  _time timestamp DEFAULT NOW() NOT NULL,
 		  UNIQUE KEY id (id)
 		  ) $charset_collate;";
+
 		require_once(ABSPATH.'wp-admin/includes/upgrade.php');
-		dbDelta($sql);
-	}
+
+        maybe_create_table($this->table, $sql);
+
+    }
 
 	// Saving Admin Form Data
 	public function save_admin_form_data(){
