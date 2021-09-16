@@ -1,10 +1,10 @@
 === Product View Counter ===
 Contributors: aihimel
-Tags: woocommerce, product, view counter
+Tags: woocommerce, product, counter, view counter
 Requires at least: 4.2
-Tested up to: 4.7
-Stable tag: trunk
-License: GPLv3
+Tested up to: 5.8
+Stable tag: 1.1.0
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 The plugin keeps track your product pageviews of today, yesterday, last week and total views.
@@ -39,6 +39,11 @@ Yes, I will support the plugin.
 2. Plugin options.
 
 == Changelog ==
+
+= 1.1.0 (17 Sep, 2021)=
+* Design issue fixed
+* Tested on latest WordPress version.
+* Minor issue fixed
 
 = 1.0 =
 * Initial Release

@@ -2,12 +2,25 @@
 /**
  * Plugin Name: Product View Counter
  * Plugin URI: https://www.wordpress.org/plugins/product-view-counter
- * Author Name: Aftabul Islam
- * Version: 1.0.0
+ * Description: A simple plugin to keep track of your product view. Has simplified configuration options and view options.
+ * Author: Aftabul Islam
+ * Author URI: https://profiles.wordpress.org/aihimel/
+ * Version: 1.1.0
  * Author Email: toaihimel@gmail.com
- * License: GPLv3
- * Description: The plugin keeps track your product pageviews of today, yesterday, last week and total views.
- * Copyright 2015  Aftabul Islam  (email : toaihimel@gmail.com)
+ * License: GPLv3 or later
+ *
+ * Copyright 2015-2021  Aftabul Islam
+ *
+ * PHP Requirements
+ * Requires PHP: 5.6
+ *
+ * WordPress Supports
+ * Requires at least: 4.2
+ * Tested up to: 5.8
+ *
+ * WooCommerce Support
+ * WC requires at least: 3.5
+ * WC tested up to: 5.6
  *
  */
 
