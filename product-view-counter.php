@@ -5,7 +5,7 @@
  * Description: A simple plugin to keep track of your product view. Has simplified configuration options and view options.
  * Author: Aftabul Islam
  * Author URI: https://profiles.wordpress.org/aihimel/
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author Email: toaihimel@gmail.com
  * License: GPLv3 or later
  * Text Domain: 'product-view-counter'
