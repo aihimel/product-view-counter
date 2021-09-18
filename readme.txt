@@ -3,7 +3,7 @@ Contributors: aihimel
 Tags: woocommerce, product, counter, view counter
 Requires at least: 4.2
 Tested up to: 5.8
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,7 +40,7 @@ Yes, I will support the plugin.
 
 == Changelog ==
 
-= 1.1.1 (18 Sep, 2021)=
+= 1.1.2 (18 Sep, 2021)=
 * Translation added
 
 = 1.1.0 (17 Sep, 2021)=
