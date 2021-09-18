@@ -8,7 +8,7 @@
  * Version: 1.1.0
  * Author Email: toaihimel@gmail.com
  * License: GPLv3 or later
- *
+ * Text Domain: 'product-view-counter'
  * Copyright 2015-2021  Aftabul Islam
  *
  * PHP Requirements
@@ -104,7 +104,14 @@ class PVC{
 
 	// Adds Admin Menu
 	public function menu(){
-		add_submenu_page('woocommerce', 'Product View Counter', 'Product View Counter', 'manage_options', 'product-view-counter', array($this, 'admin_control_form'));
+		add_submenu_page(
+            'woocommerce',
+            __('Product View Counter', 'product-view-counter'),
+            __('Product View Counter', 'product-view-counter'),
+            'manage_options',
+            'product-view-counter',
+            [$this, 'admin_control_form']
+        );
 	}
 
 	// Creates The Necessary Database
@@ -137,7 +144,9 @@ class PVC{
 				else update_option($this->__('available-to-all'), 'off');
 
 			// Success Message
-			echo '<div class="alert alert-success" role="alert">Saved Successfully</div>';
+			echo "<div class='alert alert-success' role='alert'>" .
+                __( 'Saved Successfully', 'product-view-counter') .
+                "</div>";
 		}
 	}
 
